@@ -1,0 +1,125 @@
+$myColor: red;
+$myPadding: 25px;
+$navBar: 100px;
+
+body {
+  margin: 0;
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #main-info {
+      align-self: flex-start;
+      position: fixed;
+      color: black;
+      background-color: white;
+      // letter-spacing: 2px;
+      width: 100%;
+      height: 50px;
+      z-index: 1000;
+      transition: 0.2s;
+
+      h1 {
+        padding-left: $myPadding * 2;
+        margin: 0px;
+        height: 50px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+      }
+
+      .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 50px;
+        font-size: 2em;
+        color: black;
+        overflow: hidden;
+        background-color: white;
+        border-bottom: 1px black solid;
+
+        .icons-show-github,
+        .icons-show-linkedin,
+        .icons-show-instagram {
+          width: 33.3%;
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          transition: 0.2s;
+        }
+        #icons-hover-github,
+        #icons-hover-linkedin,
+        #icons-hover-instagram {
+          width: 98%;
+          height: 48px;
+          background-color: white;
+          border: 1px black solid;
+          border-bottom: none;
+          color: black;
+          margin-top: 50px;
+          display: inline-block;
+          position: relative;
+          text-align: center;
+          transition: 0.2s;
+        }
+        #github-icon,
+        #linkedin-icon,
+        #instagram-icon {
+          text-align: center;
+          position: relative;
+          width: 100%;
+          height: 100px;
+          display: inline-block;
+          transition: 0.2s;
+        }
+      }
+    }
+    .fa-github,
+    .fa-linkedin,
+    .fa-instagram {
+      margin-top: 10px;
+    }
+
+    #container {
+      width: 100%;
+      margin-top: $navBar * 1.5;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .portfolio-item {
+        width: 30%;
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $navBar/2;
+        overflow: hidden;
+        filter: grayscale(100%);
+        // -webkit-filter: grayscale(100%);
+        transition: 0.2s;
+
+        img {
+          width: 90%;
+        }
+      }
+      .add-color {
+        filter: grayscale(0%);
+        // -webkit-filter: unset;
+        transition: filter 4s;
+      }
+    }
+  }
+}
