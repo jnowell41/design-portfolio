@@ -1,6 +1,9 @@
 $myColor: red;
 $myPadding: 25px;
 $navBar: 100px;
+// * {
+//   cursor: crosshair;
+// }
 
 body {
   margin: 0;
@@ -25,7 +28,7 @@ body {
       transition: 0.2s;
 
       h1 {
-        padding-left: $myPadding * 2;
+        padding-left: $myPadding;
         margin: 0px;
         height: 50px;
         font-weight: 400;
@@ -63,7 +66,7 @@ body {
         #icons-hover-instagram {
           width: 98%;
           height: 48px;
-          background-color: white;
+          // background-color: rgb(209, 202, 202);
           border: 1px black solid;
           border-bottom: none;
           color: black;
@@ -90,12 +93,58 @@ body {
     .fa-instagram {
       margin-top: 10px;
     }
+    .my-footer {
+      width: 100vw;
+      height: $navBar/2;
+      background-color: white;
+      bottom: 0;
+      position: fixed;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      transition: 0.2s;
+      border: 1px black solid;
+      h1 {
+        padding-left: $myPadding * 1.5;
+        margin: 0px;
+        height: 50px;
+        font-size: 1.4em;
+        font-weight: 400;
+      }
+      div {
+        padding-left: $myPadding;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 30%;
+
+        p {
+          margin: 0px;
+          font-size: 1.4em;
+        }
+      }
+      #cv-tag {
+        align-self: flex-start;
+        width: 30%;
+        height: 100%;
+        border: 1px transparent solid;
+        font-size: 3em;
+        &:hover {
+          border: 1px black solid;
+        }
+      }
+    }
+    .biggerlyke {
+      height: 200px;
+      transition: 0.5s;
+    }
 
     #container {
       width: 100%;
       margin-top: $navBar * 1.5;
       display: flex;
-      flex-direction: row-reverse;
       justify-content: space-around;
       flex-wrap: wrap;
 
@@ -110,6 +159,11 @@ body {
         filter: grayscale(100%);
         // -webkit-filter: grayscale(100%);
         transition: 0.2s;
+        // transition: border 2s ease-in-out;
+        border: 1px transparent solid;
+        &:hover {
+          border: 1px black solid;
+        }
 
         img {
           width: 90%;
@@ -118,7 +172,8 @@ body {
       .add-color {
         filter: grayscale(0%);
         // -webkit-filter: unset;
-        transition: filter 4s;
+        transition: filter 2s ease-in-out;
+        // border: 1px black solid;
       }
     }
   }

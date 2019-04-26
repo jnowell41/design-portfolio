@@ -14,6 +14,16 @@ class portfolioItem {
     this.title = title;
   }
 }
+data.push(new portfolioItem("../../portfolio_pics/taboo.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/taboo1.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/taboo2.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/taboo5.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi2.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi3.png", "Barcelona"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi4.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi5.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/tbilisi6.png", "Falmouth"));
 
 data.push(new portfolioItem("../../portfolio_pics/1.jpg", "Barcelona"));
 data.push(new portfolioItem("../../portfolio_pics/2.jpg", "Falmouth"));
@@ -25,6 +35,19 @@ data.push(new portfolioItem("../../portfolio_pics/7.jpg", "Barcelona"));
 data.push(new portfolioItem("../../portfolio_pics/8.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/9.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/10.jpg", "Falmouth"));
+
+data.push(new portfolioItem("../../portfolio_pics/chunnel.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/chunnel1.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/chunnel2.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/CNV00037.JPG", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/face.jpg", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/HOME.gif", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/img031.jpg", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/img034.jpg", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/jack.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/jack1.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/jack3.png", "Falmouth"));
+
 data.push(new portfolioItem("../../portfolio_pics/12.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/14.jpg", "Barcelona"));
 data.push(new portfolioItem("../../portfolio_pics/15.jpg", "Falmouth"));
@@ -35,6 +58,20 @@ data.push(new portfolioItem("../../portfolio_pics/22.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/23.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/26.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/25.jpg", "Falmouth"));
+
+data.push(new portfolioItem("../../portfolio_pics/french.png", "Barcelona"));
+data.push(new portfolioItem("../../portfolio_pics/french3.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/french4.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/french5.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover1.png", "Falmouth"));
+
+data.push(new portfolioItem("../../portfolio_pics/hannover2.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover3.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover4.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover5.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/hannover6.png", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/happyhour.jpg", "Barcelona"));
 
 data.push(new portfolioItem("../../portfolio_pics/30.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/32.jpg", "Falmouth"));
@@ -54,31 +91,6 @@ data.push(new portfolioItem("../../portfolio_pics/222.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/433.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/444.jpg", "Falmouth"));
 
-data.push(new portfolioItem("../../portfolio_pics/chunnel.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/chunnel1.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/chunnel2.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/CNV00037.JPG", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/face.jpg", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/french.png", "Barcelona"));
-data.push(new portfolioItem("../../portfolio_pics/french3.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/french4.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/french5.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover1.png", "Falmouth"));
-
-data.push(new portfolioItem("../../portfolio_pics/hannover2.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover3.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover4.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover5.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/hannover6.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/happyhour.jpg", "Barcelona"));
-data.push(new portfolioItem("../../portfolio_pics/HOME.gif", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/img031.jpg", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/img034.jpg", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/jack.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/jack1.png", "Falmouth"));
-
-data.push(new portfolioItem("../../portfolio_pics/jack3.png", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/load.gif", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/NTS.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/poster.png", "Falmouth"));
@@ -100,17 +112,6 @@ data.push(new portfolioItem("../../portfolio_pics/Scan 4.jpeg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/Scan 11.jpeg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/Scan 12.jpeg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/Scan.jpeg", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/taboo.png", "Falmouth"));
-
-data.push(new portfolioItem("../../portfolio_pics/taboo1.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/taboo2.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/taboo5.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi2.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi3.png", "Barcelona"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi4.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi5.png", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/tbilisi6.png", "Falmouth"));
 
 const addToPage = (data: portfolioEntry) => {
   let html = `
@@ -120,6 +121,8 @@ const addToPage = (data: portfolioEntry) => {
   var box: HTMLElement = document.getElementById("container");
   box.innerHTML += html;
 };
+
+var portfolioBox = document.querySelectorAll(".portfolio-item .add-color");
 
 data.forEach(element => {
   addToPage(element);
@@ -132,8 +135,10 @@ window.onscroll = function() {
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("main-info").style.marginTop = "-50px";
+    document.getElementById("my-footer").style.marginBottom = "0px";
   } else {
     document.getElementById("main-info").style.marginTop = "0px";
+    document.getElementById("my-footer").style.marginBottom = "-50px";
   }
 }
 
@@ -155,25 +160,43 @@ var myDivs = document.getElementsByClassName("portfolio-item");
 //   console.log(object[1].scrollLeft);
 // });
 
+// let alternateObserver = new IntersectionObserver(myChange, targetwindow);
+
+// function myChange(changes, alternateObserver) {
+//   changes.forEach(entry => {
+//     if (entry.intersectionRatio > 0) {
+//       alternateObserver.observe(entry).classList.toggle("add-color");
+//     } else {
+//       alternateObserver.observe(entry).classList.toggle("add-color");
+//     }
+//   });
+// }
+
 const targets = document.querySelectorAll(".portfolio-item");
 
-const observer = new IntersectionObserver(entries => {
+let targetwindow = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 1.0
+};
+
+let observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
+    if (entry.intersectionRatio > 1) {
       entry.target.classList.toggle("add-color");
     } else {
       entry.target.classList.toggle("add-color");
     }
   });
+}, targetwindow);
+
+targets.forEach(image => {
+  observer.observe(image);
 });
 
-// targets.forEach(image => {
-//   observer.observe(image);
+// Object.entries(targets).map(object => {
+//   observer.observe(object[1]);
 // });
-
-Object.entries(targets).map(object => {
-  observer.observe(object[1]);
-});
 
 // const lazyLoad = target => {
 //   const io = new IntersectionObserver((entries, observer) => {
@@ -227,6 +250,42 @@ const navBarEffect = (container, child, target) => {
     target.style.marginTop = "50px";
   });
 };
+
+let footer = document.getElementsByClassName("my-footer")[0];
+
+const expand = () => {
+  footer.addEventListener("click", function() {
+    footer.classList.toggle("biggerlyke");
+    footer.innerHTML = `<div><p>HTML</p>
+    <p>CSS & SASS</p>
+    <p>Javascript</p>
+    <p>Typescript</p>
+    <p>React.js</p>
+    <p>Redux</p>
+    <p>Digital Design</p>
+    <p>Typography</p>
+    <p>Illustration</p>
+    </div>
+    <div>
+    <p>Branding</p>
+    <p>Photography</p>
+    <p>Photo Retouching</p>
+    <p>InDesign</p>
+    <p>Photoshop</p>
+    <p>Illustrator</p>
+    </div>
+    <p id ="cv-tag"><a href="../asset/james-nowell-cv.pdf" target="_blank" download>CV</a></p>`;
+  });
+};
+
+// const contract = () => {
+//   footer.addEventListener("mouseleave", function() {
+//     footer.classList.remove("biggerlyke");
+//     footer.innerHTML = "";
+//   });
+// };
+expand();
+// contract();
 
 navBarEffect(firstIcon, myicon, myhovericon);
 navBarEffect(secondIcon, mysecondicon, mysecondhovericon);
