@@ -1,6 +1,7 @@
 $myColor: red;
 $myPadding: 25px;
 $navBar: 100px;
+$navBarHoverTransition: 0.4s;
 // * {
 //   cursor: crosshair;
 // }
@@ -8,8 +9,13 @@ $navBar: 100px;
 body {
   margin: 0;
   font-size: 0.8em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 
+  a {
+    text-decoration: none;
+    // display: block;
+    width: 100%;
+  }
   main {
     width: 100%;
     display: flex;
@@ -51,46 +57,68 @@ body {
 
         .icons-show-github,
         .icons-show-linkedin,
-        .icons-show-instagram {
-          width: 33.3%;
+        .icons-show-instagram,
+        .icons-show-cv {
+          width: 25%;
           height: 50px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
           overflow: hidden;
-          transition: 0.2s;
+          transition: $navBarHoverTransition;
         }
         #icons-hover-github,
         #icons-hover-linkedin,
         #icons-hover-instagram {
-          width: 98%;
+          width: 100%;
           height: 48px;
           // background-color: rgb(209, 202, 202);
-          border: 1px black solid;
+          // border: 1px black solid;
           border-bottom: none;
           color: black;
           margin-top: 50px;
           display: inline-block;
           position: relative;
           text-align: center;
-          transition: 0.2s;
+          transition: $navBarHoverTransition;
+        }
+        #icons-hover-cv {
+          width: 98%;
+          height: 48px;
+          // background-color: rgb(209, 202, 202);
+          // border: 1px black solid;
+          border-bottom: none;
+          color: black;
+          margin-top: 50px;
+          display: inline-block;
+          position: relative;
+          text-align: center;
+          transition: $navBarHoverTransition;
+          a {
+            font-size: 1.2em;
+            text-decoration: none;
+            color: black;
+            bottom: 0;
+          }
         }
         #github-icon,
         #linkedin-icon,
-        #instagram-icon {
+        #instagram-icon,
+        #cv-icon {
           text-align: center;
           position: relative;
           width: 100%;
           height: 100px;
           display: inline-block;
-          transition: 0.2s;
+          transition: $navBarHoverTransition;
         }
       }
     }
     .fa-github,
     .fa-linkedin,
-    .fa-instagram {
+    .fa-instagram,
+    .fa-file {
       margin-top: 10px;
     }
     .my-footer {
@@ -99,13 +127,29 @@ body {
       background-color: white;
       bottom: 0;
       position: fixed;
-      z-index: 1000;
+      z-index: 2000;
       display: flex;
-      justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       align-items: flex-start;
       transition: 0.2s;
       border: 1px black solid;
+      &:hover {
+        cursor: crosshair;
+      }
+      #scroll-holder {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .fa-scroll {
+          font-size: 2em;
+        }
+      }
+
       h1 {
+        padding-top: $myPadding/2;
         padding-left: $myPadding * 1.5;
         margin: 0px;
         height: 50px;
@@ -113,32 +157,73 @@ body {
         font-weight: 400;
       }
       div {
-        padding-left: $myPadding;
         display: flex;
         align-items: flex-start;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 30%;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 33%;
+        flex-wrap: wrap;
 
         p {
+          // padding-top: $myPadding/2;
+          padding: $myPadding;
           margin: 0px;
           font-size: 1.4em;
-        }
-      }
-      #cv-tag {
-        align-self: flex-start;
-        width: 30%;
-        height: 100%;
-        border: 1px transparent solid;
-        font-size: 3em;
-        &:hover {
-          border: 1px black solid;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
     .biggerlyke {
       height: 200px;
-      transition: 0.5s;
+      transition: 0.2s;
+    }
+
+    .fixedPlaqueContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: $navBar/2;
+      bottom: $navBar / 2;
+      background-color: white;
+      transition: 0.2s;
+
+      #closeThis {
+        font-size: 2em;
+        align-self: flex-start;
+        padding: $myPadding;
+        left: -100vw;
+        position: absolute;
+        display: block;
+        border: 1px black solid;
+        border-left: none;
+        transition: 0.5s;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .changeZindex {
+      z-index: 100;
+      transition: 0.2s;
+    }
+    .fixedPlaque {
+      display: none;
+      width: auto;
+      height: 100%;
+      transition: 0.2s;
+      img {
+        top: 0;
+        height: 100%;
+        width: auto;
+      }
+    }
+    .displayOrNot {
+      display: block;
+      z-index: 1000;
     }
 
     #container {
@@ -147,6 +232,7 @@ body {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
+      z-index: 0;
 
       .portfolio-item {
         width: 30%;
@@ -157,23 +243,47 @@ body {
         margin-bottom: $navBar/2;
         overflow: hidden;
         filter: grayscale(100%);
-        // -webkit-filter: grayscale(100%);
-        transition: 0.2s;
-        // transition: border 2s ease-in-out;
+        -webkit-filter: grayscale(100%);
+        transition: filter 2s ease-in-out;
         border: 1px transparent solid;
-        &:hover {
-          border: 1px black solid;
-        }
-
         img {
           width: 90%;
         }
       }
+      .bigBoy {
+        width: 100%;
+      }
+      #bigger-portfolio-item {
+        display: none;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        margin-left: 10vw;
+        img {
+          width: 100%;
+        }
+      }
+      // .add-display {
+      //   display: block;
+      // }
+      #isTrue {
+        display: block;
+      }
+      #notHere {
+        display: none;
+      }
       .add-color {
         filter: grayscale(0%);
-        // -webkit-filter: unset;
+        -webkit-filter: unset;
         transition: filter 2s ease-in-out;
         // border: 1px black solid;
+      }
+      .add-border {
+        border: 1px black solid;
+        transition: 0.1s;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

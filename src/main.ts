@@ -30,6 +30,7 @@ data.push(new portfolioItem("../../portfolio_pics/2.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/3.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/4.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/5.jpg", "Falmouth"));
+data.push(new portfolioItem("../../portfolio_pics/NTS.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/6.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/7.jpg", "Barcelona"));
 data.push(new portfolioItem("../../portfolio_pics/8.jpg", "Falmouth"));
@@ -92,7 +93,6 @@ data.push(new portfolioItem("../../portfolio_pics/433.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/444.jpg", "Falmouth"));
 
 data.push(new portfolioItem("../../portfolio_pics/load.gif", "Falmouth"));
-data.push(new portfolioItem("../../portfolio_pics/NTS.jpg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/poster.png", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/poster1.png", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/poster2.png", "Barcelona"));
@@ -113,6 +113,10 @@ data.push(new portfolioItem("../../portfolio_pics/Scan 11.jpeg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/Scan 12.jpeg", "Falmouth"));
 data.push(new portfolioItem("../../portfolio_pics/Scan.jpeg", "Falmouth"));
 
+let myBoolean: boolean = false;
+
+const isTrue = myBoolean ? `bigBoy` : `notHere`;
+
 const addToPage = (data: portfolioEntry) => {
   let html = `
   <div class="portfolio-item">
@@ -121,6 +125,11 @@ const addToPage = (data: portfolioEntry) => {
   var box: HTMLElement = document.getElementById("container");
   box.innerHTML += html;
 };
+
+const myFunction = () => {
+  myBoolean = !myBoolean;
+};
+console.log(data);
 
 var portfolioBox = document.querySelectorAll(".portfolio-item .add-color");
 
@@ -144,35 +153,54 @@ function scrollFunction() {
 
 var myDivs = document.getElementsByClassName("portfolio-item");
 
-// myDivs[0].addEventListener("click", function() {
-//   myDivs[0].style.filter = "unset";
-// });
-// console.log(myDivs);
-
-// Object.entries(myDivs).map(object => {
-//   object[1].addEventListener("mouseenter", function() {
-//     this.style.filter = "unset";
-//   });
-// });
-
-// Object.entries(myDivs).map(object => {
-//   console.log(object[1].scrollTop);
-//   console.log(object[1].scrollLeft);
-// });
-
-// let alternateObserver = new IntersectionObserver(myChange, targetwindow);
-
-// function myChange(changes, alternateObserver) {
-//   changes.forEach(entry => {
-//     if (entry.intersectionRatio > 0) {
-//       alternateObserver.observe(entry).classList.toggle("add-color");
-//     } else {
-//       alternateObserver.observe(entry).classList.toggle("add-color");
-//     }
-//   });
-// }
-
 const targets = document.querySelectorAll(".portfolio-item");
+
+targets.forEach(image => {
+  image.addEventListener("mouseover", function() {
+    image.classList.add("add-border");
+    console.log("hover on");
+  });
+  image.addEventListener("mouseleave", function() {
+    image.classList.remove("add-border");
+    console.log("hover-off");
+  });
+  image.addEventListener("click", function() {
+    let imageToAlter = image.getElementsByTagName("img")[0].src;
+    console.log(imageToAlter);
+    document.getElementsByClassName(
+      "fixedPlaque"
+    )[0].innerHTML = `<img src="${imageToAlter}" />`;
+    document
+      .getElementsByClassName("fixedPlaque")[0]
+      .classList.toggle("displayOrNot");
+    document
+      .getElementsByClassName("fixedPlaqueContainer")[0]
+      .classList.toggle("changeZindex");
+    document.getElementById("closeThis").style.left = "0vw";
+  });
+});
+// document
+//   .getElementsByClassName("fixedPlaque")[0]
+//   .addEventListener("click", function() {
+//     document
+//       .getElementsByClassName("fixedPlaque")[0]
+//       .classList.toggle("displayOrNot");
+//     document
+//       .getElementsByClassName("fixedPlaqueContainer")[0]
+//       .classList.toggle("changeZindex");
+//   });
+
+document.getElementById("closeThis").addEventListener("click", function() {
+  document.getElementById("closeThis").style.left = "-100vw";
+  document
+    .getElementsByClassName("fixedPlaque")[0]
+    .classList.toggle("displayOrNot");
+  document
+    .getElementsByClassName("fixedPlaqueContainer")[0]
+    .classList.toggle("changeZindex");
+});
+
+//class is added to portfolio item when user scrolls it into the viewport. class unsets greyscale filter
 
 let targetwindow = {
   root: null,
@@ -194,29 +222,7 @@ targets.forEach(image => {
   observer.observe(image);
 });
 
-// Object.entries(targets).map(object => {
-//   observer.observe(object[1]);
-// });
-
-// const lazyLoad = target => {
-//   const io = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//       console.log("this works");
-
-//       if (entry.isIntersecting) {
-//         const img = entry.target;
-//         const src = img.getAttribute("data-lazy");
-
-//         img.setAttribute("src", src);
-//         img.classList.add("addColor");
-
-//         observer.disconnect();
-//       }
-//     });
-//   });
-//   io.observe(target);
-// };
-// targets.forEach(lazyLoad);
+//navbar, rolls second element over hover
 
 var firstIcon = document.getElementsByClassName("icons-show-github")[0];
 let myicon = document.getElementById("github-icon");
@@ -230,15 +236,9 @@ var thirdIcon = document.getElementsByClassName("icons-show-linkedin")[0];
 let mythirdicon = document.getElementById("linkedin-icon");
 let mythirdhovericon = document.getElementById("icons-hover-linkedin");
 
-// firstIcon.addEventListener("mouseover", function() {
-//   myicon.style.marginTop = "-50px";
-//   myhovericon.style.marginTop = "-50px";
-// });
-
-// firstIcon.addEventListener("mouseleave", function() {
-//   myicon.style.marginTop = "0px";
-//   myhovericon.style.marginTop = "50px";
-// });
+var fourthIcon = document.getElementsByClassName("icons-show-cv")[0];
+let myfourthicon = document.getElementById("cv-icon");
+let myfourthhovericon = document.getElementById("icons-hover-cv");
 
 const navBarEffect = (container, child, target) => {
   container.addEventListener("mouseover", function() {
@@ -251,37 +251,44 @@ const navBarEffect = (container, child, target) => {
   });
 };
 
-let footer = document.getElementsByClassName("my-footer")[0];
+//reveals footer on click and changes the HTML to list skills (to be filtered), should also act as a window where portfolioitem info is displayed
 
 const expand = () => {
+  let comparison = true;
+  const footer = document.getElementsByClassName("my-footer")[0];
   footer.addEventListener("click", function() {
     footer.classList.toggle("biggerlyke");
-    footer.innerHTML = `<div><p>HTML</p>
-    <p>CSS & SASS</p>
-    <p>Javascript</p>
-    <p>Typescript</p>
-    <p>React.js</p>
-    <p>Redux</p>
-    <p>Digital Design</p>
-    <p>Typography</p>
-    <p>Illustration</p>
-    </div>
-    <div>
-    <p>Branding</p>
-    <p>Photography</p>
-    <p>Photo Retouching</p>
-    <p>InDesign</p>
-    <p>Photoshop</p>
-    <p>Illustrator</p>
-    </div>
-    <p id ="cv-tag"><a href="../asset/james-nowell-cv.pdf" target="_blank" download>CV</a></p>`;
+    comparison = !comparison;
+
+    if (comparison === true) {
+      footer.innerHTML = `<div id="scroll-holder"><i class="fas fa-scroll"></i></div>`;
+    } else {
+      footer.innerHTML = `<div><p>HTML</p>
+      <p>CSS & SASS</p>
+      <p>Javascript</p>
+      <p>Typescript</p>
+      <p>React.js</p>
+      <p>Redux</p>
+      <p>Digital Design</p>
+      <p>Typography</p>
+      <p>Illustration</p>
+      </div>
+      <div>
+      <p>Branding</p>
+      <p>Photography</p>
+      <p>Photo Retouching</p>
+      <p>InDesign</p>
+      <p>Photoshop</p>
+      <p>Illustrator</p>
+      </div>`;
+    }
   });
 };
 
 // const contract = () => {
-//   footer.addEventListener("mouseleave", function() {
+//   footer.addEventListener("click", function() {
 //     footer.classList.remove("biggerlyke");
-//     footer.innerHTML = "";
+//     footer.innerHTML = "<h1><span>PortfolioItem {info}</span></h1>";
 //   });
 // };
 expand();
@@ -290,3 +297,4 @@ expand();
 navBarEffect(firstIcon, myicon, myhovericon);
 navBarEffect(secondIcon, mysecondicon, mysecondhovericon);
 navBarEffect(thirdIcon, mythirdicon, mythirdhovericon);
+navBarEffect(fourthIcon, myfourthicon, myfourthhovericon);
