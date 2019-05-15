@@ -13,6 +13,7 @@
   "scripts": {
     "tsc": "tsc --watch",
     "sass": "sass src/.:build --watch",
+    "ts": "tsc src/.:build",
     "nodemon": "nodemon build/js/main.js",
     "build-js": "concurrently \"yarn run tsc \" \"yarn run sass\""
   }
