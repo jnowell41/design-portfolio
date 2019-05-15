@@ -126,7 +126,7 @@ body {
     }
     .my-footer {
       width: 100vw;
-      // height: $footerHeight;
+      height: $footerHeight;
       background-color: white;
       bottom: 0;
       top: $footerTopMargin;
@@ -146,6 +146,7 @@ body {
       .personal-profile {
         align-self: center;
         font-size: 2em;
+        width: 60%;
         opacity: 0;
         font-family: Arial, Helvetica, sans-serif;
         display: block;
@@ -161,7 +162,6 @@ body {
         align-items: center;
         height: 100%;
         border-right: 1px black solid;
-        border-bottom: 1px black solid;
 
         #chevron_up {
           font-size: 2em;
@@ -205,8 +205,11 @@ body {
     .footer-heightened {
       cursor: crosshair;
       top: $navBar/2;
-      height: auto;
+      height: 100%;
       transition: 0.3s;
+    }
+    .hide-footer {
+      top: 100vh;
     }
     .biggerlyke {
       height: 200px;
@@ -220,7 +223,7 @@ body {
       align-items: center;
       position: fixed;
       top: $navBar/2;
-      bottom: $navBar / 2;
+      bottom: $footerHeight;
       background-color: white;
       transition: 0.2s;
 

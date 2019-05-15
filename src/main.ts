@@ -144,10 +144,11 @@ window.onscroll = function() {
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("main-info").style.marginTop = "-50px";
-    document.getElementById("my-footer").style.marginBottom = "0px";
+    footer.classList.remove("hide-footer");
   } else {
     document.getElementById("main-info").style.marginTop = "0px";
-    document.getElementById("my-footer").style.marginBottom = "-50px";
+    // document.getElementById("my-footer").style.top = "100vh";
+    footer.classList.add("hide-footer");
   }
 }
 
