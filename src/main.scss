@@ -2,6 +2,9 @@ $myColor: red;
 $myPadding: 25px;
 $navBar: 100px;
 $navBarHoverTransition: 0.4s;
+$footerHeight: 8vh;
+$footerTopMargin: 92vh;
+$icon-size: 20px;
 // * {
 //   cursor: crosshair;
 // }
@@ -123,19 +126,33 @@ body {
     }
     .my-footer {
       width: 100vw;
-      height: $navBar/2;
+      // height: $footerHeight;
       background-color: white;
       bottom: 0;
+      top: $footerTopMargin;
       position: fixed;
       z-index: 2000;
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-around;
       align-items: flex-start;
-      transition: 0.2s;
+      transition: 0.3s;
       border: 1px black solid;
-      &:hover {
-        cursor: crosshair;
+      // &:hover {
+      //   cursor: crosshair;
+      //   top: $navBar/2;
+      // }
+      .personal-profile {
+        align-self: center;
+        font-size: 2em;
+        opacity: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        transition: 0.3s;
+      }
+      .personal-profile-insight {
+        opacity: 1;
       }
       #scroll-holder {
         width: 25%;
@@ -143,8 +160,18 @@ body {
         justify-content: center;
         align-items: center;
         height: 100%;
-        .fa-scroll {
+        border-right: 1px black solid;
+        border-bottom: 1px black solid;
+
+        #chevron_up {
           font-size: 2em;
+          display: block;
+          padding: 0 $myPadding 0 $myPadding;
+        }
+        #chevron_down {
+          display: none;
+          font-size: 2em;
+          padding: 0 $myPadding 0 $myPadding;
         }
       }
 
@@ -175,6 +202,12 @@ body {
         }
       }
     }
+    .footer-heightened {
+      cursor: crosshair;
+      top: $navBar/2;
+      height: auto;
+      transition: 0.3s;
+    }
     .biggerlyke {
       height: 200px;
       transition: 0.2s;
@@ -194,10 +227,14 @@ body {
       #closeThis {
         font-size: 2em;
         align-self: flex-start;
+        width: 30px;
+        height: auto;
         padding: $myPadding;
         left: -100vw;
         position: absolute;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px black solid;
         border-left: none;
         transition: 0.5s;

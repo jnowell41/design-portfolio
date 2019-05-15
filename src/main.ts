@@ -240,6 +240,10 @@ var fourthIcon = document.getElementsByClassName("icons-show-cv")[0];
 let myfourthicon = document.getElementById("cv-icon");
 let myfourthhovericon = document.getElementById("icons-hover-cv");
 
+// var fifthIcon = document.getElementsByClassName("icons-show-arrow")[0];
+// let myfifthicon = document.getElementById("arrow-icon");
+// let myfifthhovericon = document.getElementById("icons-hover-arrow");
+
 const navBarEffect = (container, child, target) => {
   container.addEventListener("mouseover", function() {
     child.style.marginTop = "-50px";
@@ -253,37 +257,58 @@ const navBarEffect = (container, child, target) => {
 
 //reveals footer on click and changes the HTML to list skills (to be filtered), should also act as a window where portfolioitem info is displayed
 
-const expand = () => {
-  let comparison = true;
-  const footer = document.getElementsByClassName("my-footer")[0];
-  footer.addEventListener("click", function() {
-    footer.classList.toggle("biggerlyke");
-    comparison = !comparison;
+// const expand = () => {
+//   let comparison = true;
+//   const footer = document.getElementsByClassName("my-footer")[0];
+//   footer.addEventListener("mouseenter", function() {
+//     footer.classList.toggle("biggerlyke");
+//     comparison = !comparison;
 
-    if (comparison === true) {
-      footer.innerHTML = `<div id="scroll-holder"><i class="fas fa-scroll"></i></div>`;
-    } else {
-      footer.innerHTML = `<div><p>HTML</p>
-      <p>CSS & SASS</p>
-      <p>Javascript</p>
-      <p>Typescript</p>
-      <p>React.js</p>
-      <p>Redux</p>
-      <p>Digital Design</p>
-      <p>Typography</p>
-      <p>Illustration</p>
-      </div>
-      <div>
-      <p>Branding</p>
-      <p>Photography</p>
-      <p>Photo Retouching</p>
-      <p>InDesign</p>
-      <p>Photoshop</p>
-      <p>Illustrator</p>
-      </div>`;
-    }
+//     if (comparison === true) {
+//       footer.innerHTML = `<div id="scroll-holder"><i class="fas fa-scroll"></i></div>`;
+//     } else {
+//       footer.innerHTML = `<div><p>HTML</p>
+//       <p>CSS & SASS</p>
+//       <p>Javascript</p>
+//       <p>Typescript</p>
+//       <p>React.js</p>
+//       <p>Redux</p>
+//       <p>Digital Design</p>
+//       <p>Typography</p>
+//       <p>Illustration</p>
+//       </div>
+//       <div>
+//       <p>Branding</p>
+//       <p>Photography</p>
+//       <p>Photo Retouching</p>
+//       <p>InDesign</p>
+//       <p>Photoshop</p>
+//       <p>Illustrator</p>
+//       </div>`;
+//     }
+//   });
+//   footer.addEventListener("mouseleave", function() {
+//     footer.classList.toggle("biggerlyke");
+//   });
+// };
+const footer = document.getElementsByClassName("my-footer")[0];
+const expand = () => {
+  const profile = document.getElementsByClassName("personal-profile")[0];
+  footer.addEventListener("mouseenter", function() {
+    document.getElementById("chevron_down").style.display = "block";
+    document.getElementById("chevron_up").style.display = "none";
+  });
+  footer.addEventListener("mouseleave", function() {
+    document.getElementById("chevron_down").style.display = "none";
+    document.getElementById("chevron_up").style.display = "block";
   });
 };
+footer.addEventListener("click", function() {
+  footer.classList.toggle("footer-heightened");
+  document
+    .getElementsByClassName("personal-profile")[0]
+    .classList.toggle("personal-profile-insight");
+});
 
 // const contract = () => {
 //   footer.addEventListener("click", function() {
@@ -298,3 +323,4 @@ navBarEffect(firstIcon, myicon, myhovericon);
 navBarEffect(secondIcon, mysecondicon, mysecondhovericon);
 navBarEffect(thirdIcon, mythirdicon, mythirdhovericon);
 navBarEffect(fourthIcon, myfourthicon, myfourthhovericon);
+// navBarEffect(fifthIcon, myfifthicon, myfifthhovericon);
