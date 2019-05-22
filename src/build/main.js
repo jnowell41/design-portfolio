@@ -1,11 +1,11 @@
 var data = [];
-var portfolioItem = /** @class */ (function() {
-  function portfolioItem(image, title) {
-    this.imageUrl = image;
-    this.title = title;
-  }
-  return portfolioItem;
-})();
+var portfolioItem = /** @class */ (function () {
+    function portfolioItem(image, title) {
+        this.imageUrl = image;
+        this.title = title;
+    }
+    return portfolioItem;
+}());
 data.push(new portfolioItem("portfolio_pics/taboo.png", "Falmouth"));
 data.push(new portfolioItem("portfolio_pics/taboo1.png", "Falmouth"));
 data.push(new portfolioItem("portfolio_pics/taboo2.png", "Falmouth"));
@@ -97,59 +97,56 @@ data.push(new portfolioItem("portfolio_pics/Scan 12.jpeg", "Falmouth"));
 data.push(new portfolioItem("portfolio_pics/Scan.jpeg", "Falmouth"));
 var myBoolean = false;
 var isTrue = myBoolean ? "bigBoy" : "notHere";
-var addToPage = function(data) {
-  var html =
-    '\n  <div class="portfolio-item">\n    <img src="' +
-    data.imageUrl +
-    '"/>\n  </div>';
-  var box = document.getElementById("container");
-  box.innerHTML += html;
+var addToPage = function (data) {
+    var html = "\n  <div class=\"portfolio-item\">\n    <img src=\"" + data.imageUrl + "\"/>\n  </div>";
+    var box = document.getElementById("container");
+    box.innerHTML += html;
 };
-var myFunction = function() {
-  myBoolean = !myBoolean;
+var myFunction = function () {
+    myBoolean = !myBoolean;
 };
 console.log(data);
 var portfolioBox = document.querySelectorAll(".portfolio-item .add-color");
-data.forEach(function(element) {
-  addToPage(element);
+data.forEach(function (element) {
+    addToPage(element);
 });
-window.onscroll = function() {
-  scrollFunction();
+window.onscroll = function () {
+    scrollFunction();
 };
 function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("main-info").style.marginTop = "-50px";
-    footer.classList.remove("hide-footer");
-  } else {
-    document.getElementById("main-info").style.marginTop = "0px";
-    // document.getElementById("my-footer").style.top = "100vh";
-    footer.classList.add("hide-footer");
-  }
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("main-info").style.marginTop = "-50px";
+        footer.classList.remove("hide-footer");
+    }
+    else {
+        document.getElementById("main-info").style.marginTop = "0px";
+        // document.getElementById("my-footer").style.top = "100vh";
+        footer.classList.add("hide-footer");
+    }
 }
 var myDivs = document.getElementsByClassName("portfolio-item");
 var targets = document.querySelectorAll(".portfolio-item");
-targets.forEach(function(image) {
-  image.addEventListener("mouseover", function() {
-    image.classList.add("add-border");
-    console.log("hover on");
-  });
-  image.addEventListener("mouseleave", function() {
-    image.classList.remove("add-border");
-    console.log("hover-off");
-  });
-  image.addEventListener("click", function() {
-    var imageToAlter = image.getElementsByTagName("img")[0].src;
-    console.log(imageToAlter);
-    document.getElementsByClassName("fixedPlaque")[0].innerHTML =
-      '<img src="' + imageToAlter + '" />';
-    document
-      .getElementsByClassName("fixedPlaque")[0]
-      .classList.toggle("displayOrNot");
-    document
-      .getElementsByClassName("fixedPlaqueContainer")[0]
-      .classList.toggle("changeZindex");
-    document.getElementById("closeThis").style.left = "0vw";
-  });
+targets.forEach(function (image) {
+    image.addEventListener("mouseover", function () {
+        image.classList.add("add-border");
+        console.log("hover on");
+    });
+    image.addEventListener("mouseleave", function () {
+        image.classList.remove("add-border");
+        console.log("hover-off");
+    });
+    image.addEventListener("click", function () {
+        var imageToAlter = image.getElementsByTagName("img")[0].src;
+        console.log(imageToAlter);
+        document.getElementsByClassName("fixedPlaque")[0].innerHTML = "<img src=\"" + imageToAlter + "\" />";
+        document
+            .getElementsByClassName("fixedPlaque")[0]
+            .classList.toggle("displayOrNot");
+        document
+            .getElementsByClassName("fixedPlaqueContainer")[0]
+            .classList.toggle("changeZindex");
+        document.getElementById("closeThis").style.left = "0vw";
+    });
 });
 // document
 //   .getElementsByClassName("fixedPlaque")[0]
@@ -161,32 +158,33 @@ targets.forEach(function(image) {
 //       .getElementsByClassName("fixedPlaqueContainer")[0]
 //       .classList.toggle("changeZindex");
 //   });
-document.getElementById("closeThis").addEventListener("click", function() {
-  document.getElementById("closeThis").style.left = "-100vw";
-  document
-    .getElementsByClassName("fixedPlaque")[0]
-    .classList.toggle("displayOrNot");
-  document
-    .getElementsByClassName("fixedPlaqueContainer")[0]
-    .classList.toggle("changeZindex");
+document.getElementById("closeThis").addEventListener("click", function () {
+    document.getElementById("closeThis").style.left = "-100vw";
+    document
+        .getElementsByClassName("fixedPlaque")[0]
+        .classList.toggle("displayOrNot");
+    document
+        .getElementsByClassName("fixedPlaqueContainer")[0]
+        .classList.toggle("changeZindex");
 });
 //class is added to portfolio item when user scrolls it into the viewport. class unsets greyscale filter
 var targetwindow = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 1.0
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0
 };
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.intersectionRatio > 1) {
-      entry.target.classList.toggle("add-color");
-    } else {
-      entry.target.classList.toggle("add-color");
-    }
-  });
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio > 1) {
+            entry.target.classList.toggle("add-color");
+        }
+        else {
+            entry.target.classList.toggle("add-color");
+        }
+    });
 }, targetwindow);
-targets.forEach(function(image) {
-  observer.observe(image);
+targets.forEach(function (image) {
+    observer.observe(image);
 });
 //navbar, rolls second element over hover
 var firstIcon = document.getElementsByClassName("icons-show-github")[0];
@@ -204,15 +202,15 @@ var myfourthhovericon = document.getElementById("icons-hover-cv");
 // var fifthIcon = document.getElementsByClassName("icons-show-arrow")[0];
 // let myfifthicon = document.getElementById("arrow-icon");
 // let myfifthhovericon = document.getElementById("icons-hover-arrow");
-var navBarEffect = function(container, child, target) {
-  container.addEventListener("mouseover", function() {
-    child.style.marginTop = "-50px";
-    target.style.marginTop = "-50px";
-  });
-  container.addEventListener("mouseleave", function() {
-    child.style.marginTop = "0px";
-    target.style.marginTop = "50px";
-  });
+var navBarEffect = function (container, child, target) {
+    container.addEventListener("mouseover", function () {
+        child.style.marginTop = "-50px";
+        target.style.marginTop = "-50px";
+    });
+    container.addEventListener("mouseleave", function () {
+        child.style.marginTop = "0px";
+        target.style.marginTop = "50px";
+    });
 };
 //reveals footer on click and changes the HTML to list skills (to be filtered), should also act as a window where portfolioitem info is displayed
 // const expand = () => {
@@ -249,22 +247,22 @@ var navBarEffect = function(container, child, target) {
 //   });
 // };
 var footer = document.getElementsByClassName("my-footer")[0];
-var expand = function() {
-  var profile = document.getElementsByClassName("personal-profile")[0];
-  footer.addEventListener("mouseenter", function() {
-    document.getElementById("chevron_down").style.display = "block";
-    document.getElementById("chevron_up").style.display = "none";
-  });
-  footer.addEventListener("mouseleave", function() {
-    document.getElementById("chevron_down").style.display = "none";
-    document.getElementById("chevron_up").style.display = "block";
-  });
+var expand = function () {
+    var profile = document.getElementsByClassName("personal-profile")[0];
+    footer.addEventListener("mouseenter", function () {
+        document.getElementById("chevron_down").style.display = "block";
+        document.getElementById("chevron_up").style.display = "none";
+    });
+    footer.addEventListener("mouseleave", function () {
+        document.getElementById("chevron_down").style.display = "none";
+        document.getElementById("chevron_up").style.display = "block";
+    });
 };
-footer.addEventListener("click", function() {
-  footer.classList.toggle("footer-heightened");
-  document
-    .getElementsByClassName("personal-profile")[0]
-    .classList.toggle("personal-profile-insight");
+footer.addEventListener("click", function () {
+    footer.classList.toggle("footer-heightened");
+    document
+        .getElementsByClassName("personal-profile")[0]
+        .classList.toggle("personal-profile-insight");
 });
 // const contract = () => {
 //   footer.addEventListener("click", function() {
